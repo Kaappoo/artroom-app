@@ -4,16 +4,21 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-import Logo from '../img/logoArtroomVetorizada.png';
-import User from '../img/brtt.png';
 
-const barraTopo = ({navigation}) => {
+import Logo from '../img/logoArtroomVetorizada.png';
+import User from '../img/kirby.png';
+
+
+const barraTopo = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.topo}>
       <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
       <Image source={User} style={{height: 55, width: 55, borderRadius: 60}}/>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
       <Image source={Logo} style={{height: 35, width: 86}}/>
+      </TouchableOpacity>
     </View>
   )
 };

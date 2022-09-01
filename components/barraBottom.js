@@ -1,11 +1,14 @@
 import * as React from "react";
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 import Search from "../img/searchIcon.png";
 import Chat from "../img/chatIcon.png";
 import House from "../img/houseIcon.png";
+import { Entypo } from "@expo/vector-icons";
 
 const BarraBottom = () => {
+  const navigation = useNavigation();
   return (
     <View style={joao.barra}>
       <TouchableOpacity>
@@ -16,6 +19,9 @@ const BarraBottom = () => {
       </TouchableOpacity>
       <TouchableOpacity>
         <Image source={Chat} style={{ width: 32, height: 32 }} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Marketplace")}>
+        <Entypo name="shop" size={30} color="white" />
       </TouchableOpacity>
     </View>
   );

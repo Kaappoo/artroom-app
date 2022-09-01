@@ -5,7 +5,7 @@ import Post from "../components/post";
 import BarraBottom from "../components/barraBottom";
 
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <Post />

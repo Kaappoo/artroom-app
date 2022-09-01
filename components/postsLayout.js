@@ -10,7 +10,7 @@ import {
 import Like from "../img/white-like-icon-png-20.png";
 import Comment from "../img/comenteraio.png";
 import * as Font from "expo-font";
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -42,13 +42,13 @@ const postsLayout = (props) => {
           {props.text}
         </Text>
       </View>
-      
-        <TouchableOpacity>
-          <AntDesign name="like2" size={24} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <FontAwesome5 name="comment-alt" size={24} color="black" />
-        </TouchableOpacity>
+
+      <TouchableOpacity>
+        <AntDesign name="like2" size={24} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <FontAwesome5 name="comment-alt" size={24} color="black" />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -80,10 +80,9 @@ const bosta = StyleSheet.create({
     alignItems: "center",
     textAlign: "center",
   },
-  like:{
+  like: {
     display: "flex",
     width: "100%",
     flexDirection: "row",
-  }
-  
+  },
 });

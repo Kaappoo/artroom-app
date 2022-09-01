@@ -5,13 +5,13 @@ import {
   ImageBackground,
   Text,
   ScrollView,
+  Animated,
 } from "react-native";
-
 
 import Kirby from "../img/kirby.png";
 import Post from "../components/post";
 
-const Perfil = () => {
+const Perfil = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <View style={styles.banner}></View>
@@ -22,7 +22,35 @@ const Perfil = () => {
           style={styles.pfp}
         ></ImageBackground>
         <View style={styles.about}>
-          <Text>Kappo</Text>
+          <Text style={{ color: "white", fontSize: 23 }}>Kappo</Text>
+          <View style={styles.bio}>
+            <Text>Oi meu nome e kaua eu amo arte :3</Text>
+            <View style={styles.tags}>
+              <ScrollView horizontal={true}>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+                <View style={styles.tag}>
+                <Text>Arte</Text>
+                </View>
+              </ScrollView>
+            </View>
+          </View>
+        </View>
+        <View style={styles.feed}>
+          <Post />
         </View>
       </View>
     </View>
@@ -43,6 +71,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 3,
     backgroundColor: "#1D0924",
+    display: "flex",
+    alignItems: "center",
   },
   pfp: {
     width: 160,
@@ -57,5 +87,35 @@ const styles = StyleSheet.create({
   },
   about: {
     display: "flex",
+    height: 70,
+    top: "15%",
+    width: 200,
+    alignItems: "center",
   },
+  feed: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: 150,
+  },
+  bio: {
+    backgroundColor: "#DCCEF9",
+    marginTop: 13,
+    borderRadius: 15,
+    padding: 10,
+  },
+  tags:{
+    borderTopColor: "#4138AC",
+    borderTopWidth: 2
+  },
+  tag:{
+    backgroundColor:"#5828BF",
+    height: 24,
+    marginRight: 10,
+    marginTop: 6,
+    width: 50,
+    borderRadius: 20,
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center"
+  }
 });

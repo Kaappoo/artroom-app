@@ -5,27 +5,22 @@ import { View, ScrollView, FlatList } from 'react-native';
 import PostsLayout from './postsLayout';
 
 import User from '../img/brtt.png';
-import Medicina from '../img/medicina.jpg';
+import Kirby from '../img/kirby.png';
+import Homem from '../img/homem.jpg'
 import ArteLinda from '../img/artelinda.jpg';
 
 const DUMMY = [
   {
-    img: Medicina,
+    img: Homem,
     userImg: User,
     userName: "@Brtt",
-    text: "eu amo medicina"
-  },
-  {
-    img: Medicina,
-    userImg: User,
-    userName: "@Brtt",
-    text: "opa"
+    text: "me deem feedback"
   },
   {
     img: ArteLinda,
-    userImg: User,
-    userName: "@Brtt",
-    text: "bunda"
+    userImg: Kirby,
+    userName: "@Kappo",
+    text: "eu que pintei"
   },
 ]
 
