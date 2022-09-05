@@ -11,7 +11,7 @@ const BarraBottom = () => {
   const navigation = useNavigation();
   return (
     <View style={joao.barra}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}> 
         <Image source={House} style={{ width: 32, height: 32 }} />
       </TouchableOpacity>
       <TouchableOpacity>

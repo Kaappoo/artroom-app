@@ -9,7 +9,8 @@ import {
 } from "react-native";
 
 import Search from "../img/searchIcon.png";
-import Produto from '../components/produtoLayout'
+import Produto from '../components/produtos';
+import BarraBottom from "../components/barraBottom";
 
 const Marketplace = () => {
   return (
@@ -19,6 +20,7 @@ const Marketplace = () => {
         <TextInput style={styles.input} />
       </View>
       <Produto />
+      <BarraBottom />
     </View>
   );
 };

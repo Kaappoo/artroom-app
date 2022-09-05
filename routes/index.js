@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../pages/home";
 import Perfil from "../pages/perfil";
 import Marketplace from "../pages/marketplace";
+import Produto from "../pages/produto";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,11 @@ const Routes = () => {
       <Stack.Screen
         name="Marketplace"
         component={Marketplace}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Produto"
+        component={Produto}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
