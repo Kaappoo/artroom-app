@@ -7,16 +7,10 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import Like from "../img/white-like-icon-png-20.png";
-import Comment from "../img/comenteraio.png";
-import * as Font from "expo-font";
+
 import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
 
-const fetchFonts = () => {
-  return Font.loadAsync({
-    "baloo-thambi": require("../assets/fonts/BalooThambi2-VariableFont_wght.ttf"),
-  });
-};
+
 const postsLayout = (props) => {
   return (
     <View style={bosta.post}>
@@ -30,7 +24,7 @@ const postsLayout = (props) => {
             style={{
               fontSize: 25,
               color: "white",
-              fontFamily: "baloo-thambi",
+              
             }}
           >
             {props.userName}
@@ -42,13 +36,14 @@ const postsLayout = (props) => {
           {props.text}
         </Text>
       </View>
-
-      <TouchableOpacity>
-        <AntDesign name="like2" size={24} color="black" />
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <FontAwesome5 name="comment-alt" size={24} color="black" />
-      </TouchableOpacity>
+      <View style={bosta.like}>
+        <TouchableOpacity>
+          <AntDesign name="like2" size={24} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <FontAwesome5 name="comment-alt" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -84,5 +79,7 @@ const bosta = StyleSheet.create({
     display: "flex",
     width: "100%",
     flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 20
   },
 });

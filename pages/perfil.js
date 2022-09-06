@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRef } from 'react';
 import {
   View,
   StyleSheet,
@@ -12,6 +13,8 @@ import Kirby from "../img/kirby.png";
 import Post from "../components/post";
 
 const Perfil = ({ navigation }) => {
+  const scrollY = useRef(new Animated.Value(0)).current;
+
   return (
     <View style={styles.main}>
       <View style={styles.banner}></View>

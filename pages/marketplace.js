@@ -9,18 +9,20 @@ import {
 } from "react-native";
 
 import Search from "../img/searchIcon.png";
-import Produto from '../components/produtos';
+import Produto from "../components/produtos";
 import BarraBottom from "../components/barraBottom";
 
 const Marketplace = () => {
   return (
     <View style={styles.main}>
       <View style={styles.search}>
-        <Image source={Search} style={{height: 20, width: 20}}/>
+        <Image source={Search} style={{ height: 20, width: 20 }} />
         <TextInput style={styles.input} />
       </View>
       <Produto />
-      <BarraBottom />
+      <View style={{width: "100%", bottom: 26}}>
+        <BarraBottom />
+      </View>
     </View>
   );
 };
@@ -46,10 +48,10 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
-  input:{
+  input: {
     width: 210,
-    color: "white"
-  }
+    color: "white",
+  },
 });

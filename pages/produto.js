@@ -3,18 +3,35 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
-  Modal,
   ImageBackground,
 } from "react-native";
+import BarraBottom from "../components/barraBottom";
 
 const ProdutoModal = ({ navigation, route }) => {
   const { titulo, img, valor } = route.params;
   return (
     <View style={styles.main}>
       <ImageBackground source={img} style={styles.imagem}></ImageBackground>
-      <Text> {titulo} </Text>
+      <View style={styles.about}>
+        <Text style={{ fontSize: 25, fontWeight: "bold", color: "white" }}>
+          {" "}
+          {titulo}{" "}
+        </Text>
+        <Text style={{ fontSize: 25, fontWeight: "bold", color: "white" }}>
+          {" "}
+          {valor}{" "}
+        </Text>
+        <TouchableOpacity style={styles.comprar}>
+          <Text style={{ fontSize: 25, fontWeight: "bold", color: "white" }}>
+            {" "}
+            Comprar!
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{width: "100%", bottom: "45%"  }}>
+        <BarraBottom />
+      </View>
     </View>
   );
 };
@@ -26,9 +43,28 @@ const styles = StyleSheet.create({
     display: "flex",
     height: "100%",
     backgroundColor: "#1D0924",
+    alignItems: "center",
   },
-  imagem:{
+  imagem: {
     height: 300,
-    width: 280,
-  }
+    width: "100%",
+    
+  },
+  about: {
+    
+    backgroundColor: "#5956FF",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    paddingTop: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    height: "100%"
+  },
+  comprar: {
+    backgroundColor: "#59BDF5",
+    padding: 18,
+    borderRadius: 20,
+    marginTop: 20,
+  },
 });

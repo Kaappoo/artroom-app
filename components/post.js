@@ -8,6 +8,7 @@ import User from '../img/brtt.png';
 import Kirby from '../img/kirby.png';
 import Homem from '../img/homem.jpg'
 import ArteLinda from '../img/artelinda.jpg';
+import Pintura from '../img/pintura.jpg';
 
 const DUMMY = [
   {
@@ -22,6 +23,12 @@ const DUMMY = [
     userName: "@Kappo",
     text: "eu que pintei"
   },
+  {
+    img: Pintura,
+    userImg: Kirby,
+    userName: "@Kappo",
+    text: "to vendendo comprem"
+  },
 ]
 
 const Posts = () => {
@@ -35,6 +42,7 @@ const Posts = () => {
         renderItem={renderItem}
         keyExtractor={item => item.text}
       />
+      <View ></View>
       </View>
     )
   }
