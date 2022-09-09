@@ -3,13 +3,14 @@ import { View, StyleSheet } from "react-native";
 
 import Post from "../components/post";
 import BarraBottom from "../components/barraBottom";
-
+import FabButton from "../components/fabButton";
 
 const Home = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <Post />
       <BarraBottom />
+      <FabButton style={{ bottom: 150, right: 60}}/>
     </View>
   );
 };

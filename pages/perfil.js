@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import Kirby from "../img/kirby.png";
+
 import Post from "../components/post";
 
 const Perfil = ({ navigation }) => {
@@ -30,21 +31,6 @@ const Perfil = ({ navigation }) => {
             <Text>Oi meu nome e kaua eu amo arte :3</Text>
             <View style={styles.tags}>
               <ScrollView horizontal={true}>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
                 <View style={styles.tag}>
                 <Text>Arte</Text>
                 </View>
