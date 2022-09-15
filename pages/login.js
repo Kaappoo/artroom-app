@@ -6,21 +6,22 @@ import {
   Text,
   TextInput,
   Animated,
-  TouchableHighlight,
+  TouchableOpacity,
   Image,
 } from "react-native";
 import { AntDesign, Entypo } from "@expo/vector-icons";
-
+import { useNavigation } from '@react-navigation/native';
 import Astronauta from "../img/fundoAstrona.jpg";
 import Logo from "../img/logoArtroomVetorizada.png";
 
 const Login = () => {
+  const navigation = useNavigation();
   const [posicao, setPosicao] = useState(new Animated.Value(1));
   const [altura, setAltura] = useState(new Animated.Value(-600));
 
   Animated.sequence([
     Animated.timing(posicao, {
-      toValue: 700,
+      toValue: 800,
       duration: 1000,
     }),
     Animated.timing(altura, {
@@ -73,11 +74,11 @@ const Login = () => {
             style={{ width: 180, color: "white", paddingLeft: 10 }}
           />
         </View>
-        <TouchableHighlight style={styles.botao}>
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }}>
+        <TouchableOpacity style={styles.botao}>
+          <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }}  onPress={() => navigation.navigate("Home")}>
             Entrar
           </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <Text
           style={{
             color: "white",
@@ -88,11 +89,11 @@ const Login = () => {
         >
           Ainda não possui conta?
         </Text>
-      <TouchableHighlight style={styles.cadastro}>
+      <TouchableOpacity style={styles.cadastro}>
           <Text style={{ color: "#59BDF5", fontWeight: "bold", fontSize: 15 }}>
             Criar 
           </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </Animated.View>
     </View>
   );

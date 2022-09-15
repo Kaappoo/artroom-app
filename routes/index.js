@@ -6,6 +6,7 @@ import Perfil from "../pages/perfil";
 import Marketplace from "../pages/marketplace";
 import Produto from "../pages/produto";
 import Login from "../pages/login";
+import Search from "../pages/search";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,11 @@ const Routes = () => {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

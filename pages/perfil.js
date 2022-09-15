@@ -9,8 +9,9 @@ import {
   Animated,
 } from "react-native";
 
-import Kirby from "../img/kirby.png";
 
+import Kirby from "../img/kirby.png";
+import BarraTopo from '../components/barraTopo';
 import Post from "../components/post";
 
 const Perfil = ({ navigation }) => {
@@ -18,6 +19,7 @@ const Perfil = ({ navigation }) => {
 
   return (
     <View style={styles.main}>
+      <BarraTopo />
       <View style={styles.banner}></View>
       <View style={styles.container}>
         <ImageBackground

@@ -11,16 +11,18 @@ import {
 import Search from "../img/searchIcon.png";
 import Produto from "../components/produtos";
 import BarraBottom from "../components/barraBottom";
+import BarraTopo from "../components/barraTopo";
 
 const Marketplace = () => {
   return (
     <View style={styles.main}>
+      <BarraTopo />
       <View style={styles.search}>
         <Image source={Search} style={{ height: 20, width: 20 }} />
         <TextInput style={styles.input} />
       </View>
       <Produto />
-      <View style={{width: "100%", bottom: 26}}>
+      <View style={{width: "100%", bottom: 145}}>
         <BarraBottom />
       </View>
     </View>
@@ -35,7 +37,8 @@ const styles = StyleSheet.create({
     height: "100%",
     display: "flex",
     alignItems: "center",
-    padding: 20,
+    
+    width: "100%"
   },
   search: {
     borderWidth: 1,

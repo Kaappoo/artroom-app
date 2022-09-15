@@ -9,56 +9,54 @@ import {
 import { AntDesign, Entypo } from "@expo/vector-icons";
 
 export default class FabButton extends Component {
-    animation = new Animated.Value(0);
+  animation = new Animated.Value(0);
 
-    toggleMenu = () =>{
-        const toValue = this.open ? 0 : 1;
+  toggleMenu = () => {
+    const toValue = this.open ? 0 : 1;
 
-        Animated.spring(this.animation, {
-            toValue,
-            friction: 6,
-            useNativeDriver: true
-        }).start();
+    Animated.spring(this.animation, {
+      toValue,
+      friction: 6,
+      useNativeDriver: true,
+    }).start();
 
-        this.open = !this.open;
-    }
-
+    this.open = !this.open;
+  };
 
   render() {
-
     const cameraStyle = {
-        transform: [
-            {scale: this.animation},
-            {
-                translateY: this.animation.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, -80]
-                })
-            }
-        ]
-    }
+      transform: [
+        { scale: this.animation },
+        {
+          translateY: this.animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, -80],
+          }),
+        },
+      ],
+    };
     const likeStyle = {
-        transform: [
-            {scale: this.animation},
-            {
-                translateY: this.animation.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, -160]
-                })
-            }
-        ]
-    }
+      transform: [
+        { scale: this.animation },
+        {
+          translateY: this.animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, -160],
+          }),
+        },
+      ],
+    };
 
     const rotation = {
-        transform:[
-            {
-                rotate: this.animation.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: ['0deg', '45deg']
-                })
-            }
-        ]
-    }
+      transform: [
+        {
+          rotate: this.animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: ["0deg", "45deg"],
+          }),
+        },
+      ],
+    };
     return (
       <View style={[styles.container, this.props.style]}>
         <TouchableWithoutFeedback>
@@ -105,7 +103,6 @@ const styles = StyleSheet.create({
   },
   menu: {
     backgroundColor: "#7048C3",
-   
   },
   submenu: {
     width: 48,
