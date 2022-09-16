@@ -29,7 +29,7 @@ const ProdutoModal = ({ navigation, route }) => {
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={{width: "100%", bottom: "45%"  }}>
+      <View style={{width: "100%", height: 70  }}>
         <BarraBottom />
       </View>
     </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: "100%"
+    height: "53%"
   },
   comprar: {
     backgroundColor: "#59BDF5",

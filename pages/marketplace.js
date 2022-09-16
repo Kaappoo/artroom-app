@@ -21,9 +21,11 @@ const Marketplace = () => {
         <Image source={Search} style={{ height: 20, width: 20 }} />
         <TextInput style={styles.input} />
       </View>
-      <Produto />
-      <View style={{width: "100%", bottom: 145}}>
-        <BarraBottom />
+      <View style={{height: "72%"}}>
+        <Produto />
+      </View>
+      <View style={{ width: "100%" }}>
+        <BarraBottom  />
       </View>
     </View>
   );
@@ -37,8 +39,8 @@ const styles = StyleSheet.create({
     height: "100%",
     display: "flex",
     alignItems: "center",
-    
-    width: "100%"
+
+    width: "100%",
   },
   search: {
     borderWidth: 1,

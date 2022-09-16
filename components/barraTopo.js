@@ -12,7 +12,7 @@ import User from '../img/kirby.png';
 const barraTopo = (props) => {
   const navigation = useNavigation();
   return (
-    <View style={[styles.topo, props.style]}>
+    <View style={[styles.topo, ]}>
       <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
       <Image source={User} style={{height: 55, width: 55, borderRadius: 60}}/>
       </TouchableOpacity>

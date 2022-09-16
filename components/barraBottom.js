@@ -33,12 +33,12 @@ const joao = StyleSheet.create({
   barra: {
     width: "100%",
     backgroundColor: "#1D0924",
-    bottom: "20%",
+    
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    paddingBottom: 110,
+    
     paddingTop: 18,
     border: 10,
     borderColor: "white",

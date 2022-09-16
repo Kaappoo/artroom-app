@@ -10,10 +10,11 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <BarraTopo />
+      <View style={{height: "78%"}}>
       <Post />
-      <View style={{bottom: 105, width: "100%"}}>
-        <BarraBottom />
       </View>
+        <BarraBottom />
+      
       <FabButton style={{ bottom: 150, right: 60 }} />
     </View>
   );

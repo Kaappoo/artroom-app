@@ -23,11 +23,14 @@ const Login = () => {
     Animated.timing(posicao, {
       toValue: 800,
       duration: 1000,
-    }),
+    } ),
     Animated.timing(altura, {
       toValue: 1,
       duration: 800,
       friction: 3,
+    },
+    {
+      useNativeDriver: false,
     }),
   ]).start();
 
@@ -74,8 +77,8 @@ const Login = () => {
             style={{ width: 180, color: "white", paddingLeft: 10 }}
           />
         </View>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }}  onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity style={styles.botao}  onPress={() => navigation.navigate("Home")}>
+          <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }} >
             Entrar
           </Text>
         </TouchableOpacity>

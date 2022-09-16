@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef } from 'react';
+import { useState } from "react";
 import {
   View,
   StyleSheet,
@@ -7,43 +7,107 @@ import {
   Text,
   ScrollView,
   Animated,
+  Image,
 } from "react-native";
 
+import BarraTopo from "../components/barraTopo";
+import PostsLayout from "../components/postsLayout";
 
+import User from "../img/brtt.png";
 import Kirby from "../img/kirby.png";
-import BarraTopo from '../components/barraTopo';
-import Post from "../components/post";
+import Homem from "../img/homem.jpg";
+import ArteLinda from "../img/artelinda.jpg";
+import Pintura from "../img/pintura.jpg";
 
-const Perfil = ({ navigation }) => {
-  const scrollY = useRef(new Animated.Value(0)).current;
+const DUMMY = [
+  {
+    img: Homem,
+    userImg: User,
+    userName: "@Brtt",
+    text: "me deem feedback",
+  },
+  {
+    img: ArteLinda,
+    userImg: Kirby,
+    userName: "@Kappo",
+    text: "eu que pintei",
+  },
+  {
+    img: Pintura,
+    userImg: Kirby,
+    userName: "@Kappo",
+    text: "to vendendo comprem",
+  },
+];
 
+const Perfil = () => {
+  const [scrollY, setScrollY] = useState(new Animated.Value(0));
   return (
     <View style={styles.main}>
-      <BarraTopo />
-      <View style={styles.banner}></View>
-      <View style={styles.container}>
-        <ImageBackground
-          source={Kirby}
-          resizeMode="cover"
-          style={styles.pfp}
-        ></ImageBackground>
-        <View style={styles.about}>
-          <Text style={{ color: "white", fontSize: 23 }}>Kappo</Text>
-          <View style={styles.bio}>
-            <Text>Oi meu nome e kaua eu amo arte :3</Text>
-            <View style={styles.tags}>
-              <ScrollView horizontal={true}>
-                <View style={styles.tag}>
-                <Text>Arte</Text>
-                </View>
-              </ScrollView>
-            </View>
-          </View>
-        </View>
-        <View style={styles.feed}>
-          <Post />
-        </View>
+      <View style={{zIndex: 999}}>
+        <BarraTopo />
       </View>
+      <Animated.View
+        style={[
+          styles.banner,
+          {
+            height: scrollY.interpolate({
+              inputRange: [0, 250],
+              outputRange: [160, 0],
+            }),
+          },
+        ]}
+      ></Animated.View>
+
+      <Animated.Image source={Kirby} style={[styles.pfp, {top: scrollY.interpolate({
+              inputRange: [0, 250],
+              outputRange: [200, 70],
+            }),
+            height: scrollY.interpolate({
+              inputRange: [0, 100, 250],
+              outputRange: [130, 130, 20],
+            }),
+            width: scrollY.interpolate({
+              inputRange: [0, 100, 250],
+              outputRange: [130, 130, 20],
+            }),}]}/>
+
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={{
+          flexGrow: 1,
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+        onScroll={Animated.event(
+          [
+            {
+              nativeEvent: {
+                contentOffset: { y: scrollY },
+              },
+            },
+          ],
+          {
+            useNativeDriver: false,
+          }
+        )}
+      >
+        <View style={styles.bio}></View>
+        <View>
+          <PostsLayout
+            userImg={DUMMY[1].userImg}
+            userName={DUMMY[1].userName}
+            text={DUMMY[1].text}
+            post={DUMMY[1].img}
+          />
+          <PostsLayout
+            userImg={DUMMY[2].userImg}
+            userName={DUMMY[2].userName}
+            text={DUMMY[2].text}
+            post={DUMMY[2].img}
+          />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -52,61 +116,34 @@ export default Perfil;
 
 const styles = StyleSheet.create({
   main: {
-    display: "flex",
-    height: "100%",
+    flex: 1,
   },
   banner: {
-    flex: 1,
-    backgroundColor: "blue",
-  },
-  container: {
-    flex: 3,
-    backgroundColor: "#1D0924",
-    display: "flex",
-    alignItems: "center",
+    width: "100%",
+
+    backgroundColor: "#6FB0ED",
   },
   pfp: {
-    width: 160,
-    height: 160,
-    borderRadius: 200,
-    overflow: "hidden",
     position: "absolute",
-    bottom: "85%",
-    left: "27%",
+    
+    width: 130,
+    resizeMode: "cover",
+    alignSelf: "center",
+    
+    borderRadius: 130 / 2,
+    overflow: "hidden",
     borderColor: "#1D0924",
-    borderWidth: 7,
+    borderWidth: 4,
+    zIndex: 990,
   },
-  about: {
-    display: "flex",
-    height: 70,
-    top: "15%",
-    width: 200,
-    alignItems: "center",
-  },
-  feed: {
-    display: "flex",
-    alignItems: "center",
-    marginTop: 150,
+  scroll: {
+    backgroundColor: "#1D0924",
   },
   bio: {
+    height: 120,
+    width: 200,
     backgroundColor: "#DCCEF9",
-    marginTop: 13,
-    borderRadius: 15,
-    padding: 10,
-  },
-  tags:{
-    borderTopColor: "#4138AC",
-    borderTopWidth: 2
-  },
-  tag:{
-    backgroundColor:"#5828BF",
-    height: 24,
-    marginRight: 10,
-    marginTop: 6,
-    width: 50,
     borderRadius: 20,
-    display: "flex",
-    justifyContent:"center",
-    alignItems:"center"
-  }
+    marginTop: 80,
+  },
 });
