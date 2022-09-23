@@ -80,6 +80,6 @@ const bosta = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    marginTop: 20
+    marginTop: 20,
   },
 });

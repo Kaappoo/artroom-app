@@ -92,7 +92,7 @@ const Perfil = () => {
           }
         )}
       >
-        <View style={styles.bio}></View>
+        <View style={styles.bio}><Text>opaaa</Text></View>
         <View>
           <PostsLayout
             userImg={DUMMY[1].userImg}

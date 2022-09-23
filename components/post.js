@@ -41,6 +41,7 @@ const Posts = () => {
         data={DUMMY}
         renderItem={renderItem}
         keyExtractor={item => item.text}
+        showsVerticalScrollIndicator={false}
       />
       <View ></View>
       </View>
