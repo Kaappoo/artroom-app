@@ -11,10 +11,11 @@ import {
 import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
 
 
-const postsLayout = (props) => {
+const coco = (props) => {
   return (
     <View style={bosta.post}>
-      <ImageBackground source={props.post} style={bosta.imagem}>
+      <TouchableOpacity onPress={props.onClick}>
+      <ImageBackground source={props.post} style={bosta.imagem}  >
         <View style={bosta.usuario}>
           <Image
             source={props.userImg}
@@ -31,6 +32,7 @@ const postsLayout = (props) => {
           </Text>
         </View>
       </ImageBackground>
+      </TouchableOpacity>
       <View>
         <Text style={{ textAlign: "left", marginTop: 20, fontSize: 15 }}>
           {props.text}
@@ -48,7 +50,7 @@ const postsLayout = (props) => {
   );
 };
 
-export default postsLayout;
+export default coco;
 
 const bosta = StyleSheet.create({
   post: {
