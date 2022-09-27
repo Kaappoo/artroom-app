@@ -81,7 +81,12 @@ const Posts = () => {
       <FlatList
         data={DUMMY}
         renderItem={renderItem}
+<<<<<<< HEAD
         keyExtractor={(item) => item.text}
+=======
+        keyExtractor={item => item.text}
+        showsVerticalScrollIndicator={false}
+>>>>>>> 86620b4d7fc8bfdb6225976a143d150d36ace2db
       />
       <View></View>
     </View>

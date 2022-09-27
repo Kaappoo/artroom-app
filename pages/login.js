@@ -18,6 +18,8 @@ const Login = () => {
   const navigation = useNavigation();
   const [posicao, setPosicao] = useState(new Animated.Value(1));
   const [altura, setAltura] = useState(new Animated.Value(-600));
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
 
   Animated.sequence([
     Animated.timing(posicao, {
@@ -67,6 +69,7 @@ const Login = () => {
             placeholder="usuario"
             placeholderTextColor={"white"}
             style={{ width: 180, color: "white", paddingLeft: 10 }}
+            onChangeText={newText => setLogin(newText)}
           />
         </View>
         <View style={styles.input}>
@@ -75,9 +78,10 @@ const Login = () => {
             placeholder="senha"
             placeholderTextColor={"white"}
             style={{ width: 180, color: "white", paddingLeft: 10 }}
+            onChangeText={newText => setSenha(newText)}
           />
         </View>
-        <TouchableOpacity style={styles.botao}  onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity style={styles.botao}  onPress={() => {if(login == "kaua" && senha == "kaua") { navigation.navigate("Home")}}}>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }} >
             Entrar
           </Text>
