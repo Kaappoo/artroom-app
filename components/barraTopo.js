@@ -82,9 +82,26 @@ const barraTopo = (props) => {
               Kappo
             </Text>
             <View style={styles.botoes}>
-              <TouchableOpacity style={styles.botao1}></TouchableOpacity>
-              <TouchableOpacity style={styles.botao2}></TouchableOpacity>
-              <TouchableOpacity style={styles.botao3}></TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.botao1, { backgroundColor: "#6FB0ED" }]}
+              ></TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.botao1, { backgroundColor: "#F54599" }]}
+              ></TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Login")}
+                style={[styles.botao1, { backgroundColor: "#7048C3" }]}
+              >
+                <Text
+                  style={{
+                    fontSize: 23,
+                    fontWeight: "600",
+                    color: "white"
+                  }}
+                >
+                  Sair
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -113,7 +130,7 @@ const styles = StyleSheet.create({
   },
   side: {
     position: "absolute",
-    height: "1440%",
+    height: "1520%",
     width: "100%",
     zIndex: 9999,
     flexDirection: "row",
@@ -135,26 +152,14 @@ const styles = StyleSheet.create({
     height: 400,
   },
   botao1: {
-    backgroundColor: "#6FB0ED",
     height: 60,
     width: "80%",
     borderTopRightRadius: 30,
     borderBottomRightRadius: 30,
+    justifyContent: "center",
+    paddingLeft: 20
   },
-  botao2: {
-    backgroundColor: "#F54599",
-    height: 60,
-    width: "80%",
-    borderTopRightRadius: 30,
-    borderBottomRightRadius: 30,
-  },
-  botao3: {
-    backgroundColor: "#7048C3",
-    height: 60,
-    width: "80%",
-    borderTopRightRadius: 30,
-    borderBottomRightRadius: 30,
-  },
+  
 });
 
 export default barraTopo;

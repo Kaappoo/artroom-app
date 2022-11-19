@@ -81,7 +81,7 @@ const Login = () => {
             onChangeText={newText => setSenha(newText)}
           />
         </View>
-        <TouchableOpacity style={styles.botao}  onPress={() => {if(login == "kaua" && senha == "kaua") { navigation.navigate("Home")}}}>
+        <TouchableOpacity style={styles.botao}  onPress={() => {if(login.trim().toLowerCase() == "kaua" && senha.trim().toLowerCase() == "kaua") { navigation.navigate("Home")}}}>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }} >
             Entrar
           </Text>

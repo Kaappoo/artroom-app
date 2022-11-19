@@ -17,7 +17,7 @@ const BarraBottom = () => {
       <TouchableOpacity  onPress={() => navigation.navigate("Search")}>
         <Image source={Search} style={{ width: 32, height: 32 }} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
         <Image source={Chat} style={{ width: 32, height: 32 }} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Marketplace")}>

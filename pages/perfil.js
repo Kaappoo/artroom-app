@@ -100,7 +100,6 @@ const Perfil = () => {
           }
         )}
       >
-<<<<<<< HEAD
         <View style={styles.nome}>
           <Text style={{ color: "white", fontSize: 20 }}>Kappo</Text>
         </View>
@@ -121,9 +120,6 @@ const Perfil = () => {
             </ScrollView>
           </View>
         </View>
-=======
-        <View style={styles.bio}><Text>opaaa</Text></View>
->>>>>>> 86620b4d7fc8bfdb6225976a143d150d36ace2db
         <View>
           <PostsLayout
             userImg={DUMMY[1].userImg}

@@ -51,9 +51,9 @@ const Search = () => {
         </TouchableOpacity>
       </Animated.View>
       <View style={{ alignItems: "center", flex: 1 }}>
-        <Animated.View style={[styles.search, {bottom: scrollY.interpolate({
+        <Animated.View style={[styles.search, {top: scrollY.interpolate({
           inputRange: [0, 70],
-          outputRange: [570, 583 ]
+          outputRange: [0, -14 ]
         }), width: scrollY.interpolate({
           inputRange: [0, 70],
           outputRange: [280, 250]

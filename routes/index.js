@@ -8,6 +8,8 @@ import Produto from "../pages/produto";
 import Login from "../pages/login";
 import Search from "../pages/search";
 import Imagem from '../pages/imagem';
+import Chat from "../pages/chat";
+import Conversa from "../pages/conversa";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +51,17 @@ const Routes = () => {
         component={Imagem}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Conversa"
+        component={Conversa}
+        options={{ headerShown: false }}
+      />
+      
     </Stack.Navigator>
   );
 };

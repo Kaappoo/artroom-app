@@ -17,6 +17,7 @@ import Homem from "../img/homem.jpg";
 import ArteLinda from "../img/artelinda.jpg";
 import Pintura from "../img/pintura.jpg";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 const DUMMY = [
   {
@@ -24,18 +25,21 @@ const DUMMY = [
     userImg: User,
     userName: "@Brtt",
     text: "me deem feedback",
+    like: true,
   },
   {
     img: ArteLinda,
     userImg: Kirby,
     userName: "@Kappo",
     text: "eu que pintei",
+    like: false,
   },
   {
     img: Pintura,
     userImg: Kirby,
     userName: "@Kappo",
     text: "to vendendo comprem",
+    like: false,
   },
 ];
 
@@ -44,7 +48,7 @@ const Posts = () => {
   const renderItem = ({ item }) => (
     <View style={bosta.post}>
       <TouchableOpacity onPress={() => navigation.navigate("Imagem", item)}>
-        <ImageBackground source={item.img} style={bosta.imagem}  >
+        <ImageBackground source={item.img} style={bosta.imagem}>
           <View style={bosta.usuario}>
             <Image
               source={item.userImg}
@@ -67,8 +71,20 @@ const Posts = () => {
         </Text>
       </View>
       <View style={bosta.like}>
-        <TouchableOpacity>
-          <AntDesign name="like2" size={24} color="black" />
+        <TouchableOpacity
+          onPress={() => {
+            if (item.like == true) {
+              item.like = false;
+            } else {
+              item.like = true;
+            }
+          }}
+        >
+          <AntDesign
+            name="like2"
+            size={24}
+            color={item.like ? "white" : "black"}
+          />
         </TouchableOpacity>
         <TouchableOpacity>
           <FontAwesome5 name="comment-alt" size={24} color="black" />
@@ -81,12 +97,8 @@ const Posts = () => {
       <FlatList
         data={DUMMY}
         renderItem={renderItem}
-<<<<<<< HEAD
         keyExtractor={(item) => item.text}
-=======
-        keyExtractor={item => item.text}
         showsVerticalScrollIndicator={false}
->>>>>>> 86620b4d7fc8bfdb6225976a143d150d36ace2db
       />
       <View></View>
     </View>
