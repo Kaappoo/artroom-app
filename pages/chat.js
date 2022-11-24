@@ -14,28 +14,26 @@ import BarraTopo from "../components/barraTopo";
 
 import User from "../img/brtt.png";
 import Kirby from "../img/kirby.png";
-import Homem from "../img/homem.jpg";
-import ArteLinda from "../img/artelinda.jpg";
-import Pintura from "../img/pintura.jpg";
+import Darwin from "../img/darwin.png";
 
 const DUMMY = [
   {
-    user: "desconhecido",
-    img: User,
-    lastMsg: "oi eu sou o brtt eu tenho milhoes de cblols",
-    messages: ["hora do brtt","eu sou o brtt eu juro", "eu tipo ganhei o cblol umas vezes", "tudo congelo e ehoje eu to mto flex kkkkk"]
+    user: "Darwin",
+    img: Darwin,
+    lastMsg: "Olá",
+    messages: ["Olá amigo","como você está", "Gumball meu irmão", "Eu sou um peixe"]
   },
   {
     user: "kirby",
     img: Kirby,
-    lastMsg: "carai que fome",
-    messages: ["oi","eu sou tão rosa", "eu vou eh comer tudo", "bola rosa"]
+    lastMsg: "Que fome",
+    messages: ["oi","eu sou rosa", "Kirby", "esfera rosa"]
   },
   {
     user: "Brtt ",
     img: User,
-    lastMsg: "mano tem um maluco se passando por mim wtf",
-    messages: ["oi me ajuda aquele brtt nao eh eu","nao cara falando serio tem um cara fingindo ser eu", "ajuda namoral", "bane ele sla"]
+    lastMsg: "Opa eae cara",
+    messages: ["Oi meu mano","Eu vou lançar umas musicas", "Sim", "Não"]
   },
 ];
 

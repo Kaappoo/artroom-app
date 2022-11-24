@@ -7,11 +7,14 @@ import {
   ImageBackground,
 } from "react-native";
 import BarraBottom from "../components/barraBottom";
+import { AntDesign } from "@expo/vector-icons";
+import BarraTopo from "../components/barraTopo";
 
 const ProdutoModal = ({ navigation, route }) => {
-  const { titulo, img, valor } = route.params;
+  const { titulo, img, valor, criador, local } = route.params;
   return (
     <View style={styles.main}>
+      <BarraTopo />
       <ImageBackground source={img} style={styles.imagem}></ImageBackground>
       <View style={styles.about}>
         <Text style={{ fontSize: 25, fontWeight: "bold", color: "white" }}>
@@ -28,6 +31,14 @@ const ProdutoModal = ({ navigation, route }) => {
             Comprar!
           </Text>
         </TouchableOpacity>
+        <View style={styles.info}>
+          <Text style={{ fontSize: 18, fontWeight: "bold", color: "black" }}>
+            {["Criador: ",criador]}
+          </Text>
+          <Text style={{ fontSize: 18, fontWeight: "bold", color: "black" }}> 
+            {local}
+          </Text>
+        </View>
       </View>
       <View style={{width: "100%", height: 70  }}>
         <BarraBottom />
@@ -59,7 +70,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: "53%"
+    height: "43%"
   },
   comprar: {
     backgroundColor: "#59BDF5",
@@ -67,4 +78,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: 20,
   },
+  info:{
+    backgroundColor: "white",
+    height: "34%",
+    width: "60%",
+    padding: 10,
+    borderRadius: 20,
+    marginTop: 20,
+    justifyContent: "space-evenly",
+    alignItems: "center"
+  }
 });

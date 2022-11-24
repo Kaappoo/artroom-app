@@ -45,7 +45,7 @@ const DUMMY = [
 
 const Posts = () => {
   const navigation = useNavigation();
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item, like }) => (
     <View style={bosta.post}>
       <TouchableOpacity onPress={() => navigation.navigate("Imagem", item)}>
         <ImageBackground source={item.img} style={bosta.imagem}>
@@ -74,16 +74,16 @@ const Posts = () => {
         <TouchableOpacity
           onPress={() => {
             if (item.like == true) {
-              item.like = false;
+              like = false;
             } else {
-              item.like = true;
+              like = true;
             }
           }}
         >
           <AntDesign
             name="like2"
             size={24}
-            color={item.like ? "white" : "black"}
+            color={like ? "white" : "black"}
           />
         </TouchableOpacity>
         <TouchableOpacity>

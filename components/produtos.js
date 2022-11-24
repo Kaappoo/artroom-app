@@ -9,17 +9,23 @@ const DUMMY = [
     {
         img: Pintura,
         titulo: "pintura linda",
-        valor: "25$$"
+        valor: "25$$",
+        criador: "Kappo",
+        local: "Cecap - Guarulhos"
     },
     {
         img: Pintura,
-        titulo: "postei duas vezes",
-        valor: "25$$"
+        titulo: "bela pintura",
+        valor: "27$$",
+        criador: "Kappo",
+        local: "Etec - Guarulhos"
     },
     {
         img: Pintura,
-        titulo: "como apaga",
-        valor: "25$$"
+        titulo: "grande pintura",
+        valor: "25$$",
+        criador: "Kappo",
+        local: "Cecap - Guarulhos"
     },
 ]
 
